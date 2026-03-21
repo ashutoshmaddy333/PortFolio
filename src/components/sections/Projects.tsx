@@ -101,8 +101,8 @@ const freelanceProjects = [
       "PM2",
     ],
     type: "Freelance Public Project",
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/ashutoshmaddy333/Greeno.git",
+    liveUrl: "https://greeno-3p88.vercel.app",
   },
   {
     icon: "🍛",
@@ -137,8 +137,8 @@ const freelanceProjects = [
       "three",
     ],
     type: "Freelance Public Project",
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/ashutoshmaddy333/The-Biryani-House",
+    liveUrl: "https://the-biryani-house-20.vercel.app",
   },
 ];
 

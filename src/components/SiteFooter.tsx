@@ -86,7 +86,7 @@ export function SiteFooter() {
             </p>
             <div className="flex flex-col gap-2 text-sm text-muted">
               <a
-                href="#"
+                href="https://github.com/ashutoshmaddy333"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
@@ -95,7 +95,7 @@ export function SiteFooter() {
                 GitHub
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/in/ashutosh-kumar-545480282"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
@@ -104,7 +104,7 @@ export function SiteFooter() {
                 LinkedIn
               </a>
               <a
-                href="#"
+                href="https://vercel.com/ashutoshs-projects-b10a26cb"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"

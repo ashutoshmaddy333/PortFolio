@@ -30,9 +30,9 @@ const chipClass: Record<string, string> = {
 };
 
 const socialLinks = {
-  github: "#",
-  vercel: "#",
-  linkedin: "#",
+  github: "https://github.com/ashutoshmaddy333",
+  vercel: "https://vercel.com/ashutoshs-projects-b10a26cb",
+  linkedin: "https://linkedin.com/in/ashutosh-kumar-545480282",
   resume: "/resume.pdf",
 };
 

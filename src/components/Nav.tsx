@@ -43,11 +43,11 @@ export function Nav() {
     <nav
       className="fixed top-0 right-0 left-0 z-[500] px-[6%] pt-3"
       style={{
-        filter: "drop-shadow(0 6px 24px rgba(2,8,23,0.22))",
+        filter: "drop-shadow(0 8px 28px rgba(2,8,23,0.28))",
       }}
     >
       <div
-        className="mx-auto flex h-14 w-full max-w-[1200px] items-center justify-between rounded-2xl border border-border/80 px-4 md:px-5"
+        className="relative mx-auto flex h-[60px] w-full max-w-[1200px] items-center justify-between overflow-hidden rounded-2xl border border-border/80 px-4 md:px-5"
         style={{
           background: light
             ? "linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.72))"
@@ -55,14 +55,17 @@ export function Nav() {
           backdropFilter: "blur(18px)",
         }}
       >
+        <div className="pointer-events-none absolute top-0 right-0 left-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
         <Link
           href="#home"
-          className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-surface/70 px-3 py-1.5 font-mono text-[13px] tracking-[0.08em] text-text no-underline"
+          className="group inline-flex items-center gap-2 rounded-xl border border-border/70 bg-surface/70 px-3 py-1.5 font-mono text-[13px] tracking-[0.08em] text-text no-underline transition-all hover:-translate-y-px hover:border-bora hover:bg-surf2"
         >
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-[11px] font-bold text-accent">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-[11px] font-bold text-accent transition group-hover:bg-accent/20">
             AK
           </span>
-          <span className="hidden sm:inline">ASHUTOSH</span>
+          <span className="hidden bg-[linear-gradient(90deg,var(--text),var(--accent))] bg-clip-text font-semibold tracking-[0.14em] text-transparent sm:inline">
+            ASHUTOSH
+          </span>
         </Link>
 
         <div className="hidden items-center gap-1 rounded-xl border border-border/70 bg-surface/55 p-1 md:flex">
@@ -71,7 +74,7 @@ export function Nav() {
               key={l.href}
               href={l.href}
               data-cursor-hover
-              className="rounded-lg px-3 py-1.5 font-mono text-[11px] tracking-[0.1em] text-muted transition-all hover:text-accent"
+              className="relative rounded-lg px-3 py-1.5 font-mono text-[11px] font-medium tracking-[0.13em] text-muted/90 transition-all hover:-translate-y-px hover:text-accent"
               style={{
                 background:
                   active === l.href.slice(1) ? "rgba(96,165,250,0.12)" : undefined,
@@ -82,7 +85,18 @@ export function Nav() {
                     : undefined,
               }}
             >
-              {l.label}
+              {active === l.href.slice(1) && (
+                <span className="absolute top-[4px] right-[6px] h-1 w-1 rounded-full bg-accent" />
+              )}
+              <span
+                className={
+                  active === l.href.slice(1)
+                    ? "bg-[linear-gradient(90deg,#93c5fd,#60a5fa,#93c5fd)] bg-clip-text text-transparent"
+                    : undefined
+                }
+              >
+                {l.label}
+              </span>
             </Link>
           ))}
         </div>
@@ -92,7 +106,7 @@ export function Nav() {
             type="button"
             data-cursor-hover
             onClick={() => setMenuOpen((v) => !v)}
-            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-[10px] border border-border/80 bg-surface text-[15px] text-muted transition-all hover:border-bora hover:bg-surf2 hover:text-accent md:hidden"
+            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-[10px] border border-border/80 bg-surface text-[15px] text-muted transition-all hover:-translate-y-px hover:border-bora hover:bg-surf2 hover:text-accent md:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
           >
@@ -102,7 +116,7 @@ export function Nav() {
             type="button"
             data-cursor-hover
             onClick={toggle}
-            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-[10px] border border-border/80 bg-surface text-[15px] text-muted transition-all hover:border-bora hover:bg-surf2 hover:text-accent"
+            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-[10px] border border-border/80 bg-surface text-[15px] text-muted transition-all hover:-translate-y-px hover:border-bora hover:bg-surf2 hover:text-accent"
             aria-label={light ? "Dark mode" : "Light mode"}
           >
             {light ? "🌙" : "☀"}
@@ -110,14 +124,14 @@ export function Nav() {
           <a
             href="mailto:ashutoshkumarm416@gmail.com"
             data-cursor-hover
-            className="rounded-xl border border-accent/30 bg-accent px-3 py-2 font-mono text-[10px] tracking-[0.1em] text-white no-underline transition-all hover:-translate-y-px hover:brightness-110 hover:shadow-[0_10px_24px_rgba(96,165,250,0.35)] sm:px-4 sm:text-[11px]"
+            className="rounded-xl border border-accent/30 bg-[linear-gradient(180deg,rgba(96,165,250,1),rgba(59,130,246,0.94))] px-3 py-2 font-mono text-[10px] tracking-[0.1em] text-white no-underline transition-all hover:-translate-y-px hover:brightness-110 hover:shadow-[0_10px_24px_rgba(96,165,250,0.35)] sm:px-4 sm:text-[11px]"
           >
             HIRE ↗
           </a>
         </div>
       </div>
       {menuOpen && (
-        <div className="mx-auto mt-2 w-full max-w-[1200px] rounded-2xl border border-border/80 bg-bg3/95 p-2 backdrop-blur-xl md:hidden">
+        <div className="mx-auto mt-2 w-full max-w-[1200px] rounded-2xl border border-border/80 bg-bg3/95 p-2 shadow-[0_16px_36px_rgba(2,8,23,0.35)] backdrop-blur-xl md:hidden">
           <div className="grid grid-cols-2 gap-2">
             {links.map((l) => (
               <Link
@@ -125,7 +139,7 @@ export function Nav() {
                 href={l.href}
                 data-cursor-hover
                 onClick={() => setMenuOpen(false)}
-                className="rounded-lg border border-border/70 bg-surface/70 px-3 py-2 text-center font-mono text-[11px] tracking-[0.08em] text-muted no-underline transition hover:border-bora hover:text-accent"
+                className="rounded-lg border border-border/70 bg-surface/70 px-3 py-2 text-center font-mono text-[11px] font-medium tracking-[0.11em] text-muted no-underline transition hover:-translate-y-px hover:border-bora hover:text-accent"
               >
                 {l.label}
               </Link>
