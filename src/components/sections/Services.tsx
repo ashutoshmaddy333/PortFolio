@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const services = [
   {
@@ -17,7 +18,7 @@ const services = [
   {
     num: "02",
     icon: "🖥️",
-    title: "Full-Stack Web Applications",
+    title: "Full-stack web applications",
     desc: "End-to-end web applications with React frontend and NestJS backend, deployed and production-ready.",
     items: [
       "React + TypeScript + Redux",
@@ -85,9 +86,7 @@ export function Services() {
   return (
     <section id="services" className="px-[6%] py-[90px]">
       <Reveal>
-        <p className="mb-2 font-mono text-xs tracking-[0.12em] text-accent">
-          {"// WHAT I OFFER"}
-        </p>
+        <SectionLabel>Services</SectionLabel>
       </Reveal>
       <Reveal delay={0.05}>
         <h2 className="mb-14 font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-text">

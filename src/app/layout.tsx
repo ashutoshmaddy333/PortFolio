@@ -1,33 +1,33 @@
 import type { Metadata } from "next";
-import { DM_Sans, Space_Mono, Syne } from "next/font/google";
+import { JetBrains_Mono, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
-const syne = Syne({
-  variable: "--font-syne",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Ashutosh Kumar — Full-Stack Engineer",
+  title: "Ashutosh Kumar | Software Engineer — Full Stack",
   description:
-    "Full-stack engineer building scalable NestJS, React, and TypeScript applications — APIs, real-time systems, and enterprise dashboards.",
+    "Software engineer (full stack) building scalable NestJS, React, and TypeScript applications — APIs, real-time systems, and enterprise dashboards.",
 };
 
 export default function RootLayout({
@@ -39,7 +39,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${syne.variable} ${spaceMono.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${outfit.variable} ${jakarta.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans">
         <ThemeProvider>{children}</ThemeProvider>

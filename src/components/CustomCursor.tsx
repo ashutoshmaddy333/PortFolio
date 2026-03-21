@@ -97,7 +97,7 @@ export function CustomCursor() {
       <div
         ref={ringRef}
         id="cursor-ring"
-        className="pointer-events-none fixed z-[9998] h-[38px] w-[38px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(94,172,255,0.4)] transition-[width,height,opacity] duration-200 ease-out"
+        className="pointer-events-none fixed z-[9998] h-[38px] w-[38px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(96,165,250,0.45)] transition-[width,height,opacity] duration-200 ease-out"
         aria-hidden
       />
     </>

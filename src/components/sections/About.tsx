@@ -1,12 +1,11 @@
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export function About() {
   return (
     <section id="about" className="bg-bg2 px-[6%] py-[90px]">
       <Reveal>
-        <p className="mb-2 font-mono text-xs tracking-[0.12em] text-accent">
-          {"// ABOUT ME"}
-        </p>
+        <SectionLabel>About</SectionLabel>
       </Reveal>
       <Reveal delay={0.05}>
         <h2 className="mb-14 font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-text">
@@ -19,9 +18,11 @@ export function About() {
           <p className="text-[15px] leading-[1.85] text-muted">
             I&apos;m a{" "}
             <strong className="font-medium text-text">
-              Full-Stack Engineer from Mumbai
+              Software Engineer — Full Stack
             </strong>{" "}
-            with 2+ years of experience building production-grade applications.
+            based in Mumbai with 2+ years total experience (1 year
+            freelancing + 1 year industry) building production-grade
+            applications.
             My journey started with freelance projects in 2022, and I&apos;ve
             since grown into building enterprise-level systems with real-world
             complexity.
@@ -51,7 +52,7 @@ export function About() {
         <Reveal variant="right">
           <div className="grid grid-cols-2 gap-4">
             {[
-              { n: "2+", l: "Years Experience", c: "text-accent" },
+              { n: "2+", l: "Years Total Experience", c: "text-accent" },
               { n: "15+", l: "APIs Built", c: "text-a2" },
               { n: "30+", l: "Permissions Designed", c: "text-a3" },
               { n: "100%", l: "Remote Ready", c: "text-a4" },

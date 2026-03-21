@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const jobs = [
   {
@@ -6,7 +7,7 @@ const jobs = [
     current: true,
     role: "Software Engineer — Full Stack",
     company: "Evolve Cortex",
-    chips: ["Mumbai · Onsite", "MERN / Full-Stack"],
+    chips: ["Mumbai · Onsite", "MERN", "1 Year Industry"],
     bullets: [
       <>
         Built <strong className="font-medium text-text">CAMS (Camera & Alert Management System)</strong> — a real-time enterprise security platform with live RTSP streaming, Kafka-driven sensor alert pipeline, and WebSocket SOC dashboard
@@ -46,12 +47,18 @@ const jobs = [
     ],
   },
   {
-    date: "2022 → 2024",
+    date: "2023 → 2025",
     current: false,
-    role: "Freelance Full-Stack Developer",
+    role: "Freelance Software Engineer — Full Stack",
     company: "Independent · Remote",
-    chips: ["2 Years"],
+    chips: ["1 Year Freelancing"],
     bullets: [
+      <>
+        Delivered <strong className="font-medium text-text">GreenTech Jobs (2024–25)</strong> — a multi-role recruitment platform with admin-controlled system settings, maintenance mode, secure auth, and production-ready APIs
+      </>,
+      <>
+        Built <strong className="font-medium text-text">The Biryani House (2023–24)</strong> — a restaurant web platform with customer ordering flow, admin panel, bilingual branding, and motion-driven UX
+      </>,
       "Delivered complete web applications end-to-end for clients across various domains",
       <>
         Built <strong className="font-medium text-text">REST APIs and React frontends</strong> with authentication, user management, and role-based access
@@ -89,9 +96,7 @@ export function Experience() {
   return (
     <section id="experience" className="px-[6%] py-[90px]">
       <Reveal>
-        <p className="mb-2 font-mono text-xs tracking-[0.12em] text-accent">
-          {"// WORK HISTORY"}
-        </p>
+        <SectionLabel>Professional experience</SectionLabel>
       </Reveal>
       <Reveal delay={0.05}>
         <h2 className="mb-14 font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-text">
@@ -99,23 +104,64 @@ export function Experience() {
         </h2>
       </Reveal>
 
+      <Reveal>
+        <div className="mb-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-xl border border-a2/25 bg-a2/8 p-4">
+            <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-a2">
+              INDUSTRY EXPERIENCE
+            </p>
+            <p className="text-sm text-text">1 year — Full-time in product company</p>
+          </div>
+          <div className="rounded-xl border border-accent/25 bg-accent/8 p-4">
+            <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-accent">
+              FREELANCING EXPERIENCE
+            </p>
+            <p className="text-sm text-text">1 year — Client projects (remote)</p>
+          </div>
+        </div>
+      </Reveal>
+
       <div className="relative pl-8">
         <div className="absolute top-2.5 bottom-2.5 left-0 w-px bg-border" />
 
-        {jobs.map((job) => (
+        {jobs.map((job, idx) => (
           <Reveal key={job.role}>
-            <div className="relative mb-[52px] last:mb-0">
+            <div
+              className={`relative mb-[62px] last:mb-0 ${
+                idx > 0 ? "pt-5" : ""
+              }`}
+            >
               <div
                 className={`absolute -left-[37px] top-1.5 h-2.5 w-2.5 rounded-full ${
                   job.current
-                    ? "bg-a2 shadow-[0_0_0_4px_rgba(94,240,176,0.15)]"
-                    : "bg-accent shadow-[0_0_0_4px_rgba(94,172,255,0.15)]"
+                    ? "bg-a2 shadow-[0_0_0_4px_rgba(52,211,153,0.2)]"
+                    : "bg-accent shadow-[0_0_0_4px_rgba(96,165,250,0.2)]"
                 }`}
               />
-              <div className="mb-2 flex flex-wrap items-center gap-2 font-mono text-[11px] tracking-[0.07em] text-a2">
-                {job.date}
+              {idx > 0 && (
+                <div className="mb-4 h-px w-full bg-border/60" aria-hidden />
+              )}
+              <div className="mb-2 flex flex-wrap items-center gap-2 font-mono text-[12px] tracking-[0.09em] text-a2">
+                <span className="rounded-sm bg-a2/5 px-1.5 py-0.5">
+                  {job.date}
+                </span>
+                <span
+                  className={`rounded-full border px-2 py-0.5 text-[10px] tracking-[0.08em] ${
+                    job.role.includes("Freelance")
+                      ? "border-accent/30 bg-accent/10 text-accent"
+                      : job.role.includes("B.Tech")
+                        ? "border-border bg-surface text-muted"
+                        : "border-a2/30 bg-a2/10 text-a2"
+                  }`}
+                >
+                  {job.role.includes("Freelance")
+                    ? "Freelancing"
+                    : job.role.includes("B.Tech")
+                      ? "Education"
+                      : "Industry"}
+                </span>
                 {job.current && (
-                  <span className="rounded-full border border-[rgba(94,240,176,0.25)] bg-[rgba(94,240,176,0.1)] px-2.5 py-0.5 text-[10px] text-a2">
+                  <span className="rounded-full border border-a2/30 bg-a2/10 px-2.5 py-0.5 text-[10px] text-a2">
                     Current
                   </span>
                 )}
