@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
+/* Design tokens — dark default */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #080b10;
+  --bg2: #0d1117;
+  --bg3: #131820;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surf2: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.07);
+  --bora: rgba(94, 172, 255, 0.35);
+  --text: #dde3f0;
+  --muted: #6b7694;
+  --dim: #3d4460;
+  --accent: #5eacff;
+  --a2: #5ef0b0;
+  --a3: #ffb347;
+  --a4: #ff6b9d;
+  --glow: 0 0 60px rgba(94, 172, 255, 0.1);
+  --glow2: 0 0 30px rgba(94, 240, 176, 0.1);
+  --r: 12px;
+  --r2: 18px;
+}
+
+html.light {
+  --bg: #f0f2f7;
+  --bg2: #ffffff;
+  --bg3: #e8ebf3;
+  --surface: rgba(0, 0, 0, 0.04);
+  --surf2: rgba(0, 0, 0, 0.07);
+  --border: rgba(0, 0, 0, 0.09);
+  --bora: rgba(37, 99, 235, 0.3);
+  --text: #111827;
+  --muted: #6b7280;
+  --dim: #9ca3af;
+  --accent: #2563eb;
+  --a2: #059669;
+  --a3: #d97706;
+  --a4: #db2777;
+  --glow: 0 4px 30px rgba(37, 99, 235, 0.1);
+  --glow2: 0 4px 30px rgba(5, 150, 105, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-bg3: var(--bg3);
+  --color-surface: var(--surface);
+  --color-surf2: var(--surf2);
+  --color-border: var(--border);
+  --color-bora: var(--bora);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-accent: var(--accent);
+  --color-a2: var(--a2);
+  --color-a3: var(--a3);
+  --color-a4: var(--a4);
+  --radius-r: var(--r);
+  --radius-r2: var(--r2);
+  --shadow-glow: var(--glow);
+  --shadow-glow2: var(--glow2);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.35s,
+    color 0.35s;
+  overflow-x: hidden;
+}
+
+/* Custom utilities */
+.text-stroke-name {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+}
+
+html.light .text-stroke-name {
+  -webkit-text-stroke: 1.5px var(--accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dim);
+  border-radius: 4px;
+}
+
+@keyframes livepulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(94, 240, 176, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(94, 240, 176, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(94, 240, 176, 0);
+  }
+}
+
+.animate-livepulse {
+  animation: livepulse 1.8s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Reduce motion */
+html.light #cursor {
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -1,0 +1,129 @@
+import { Reveal } from "@/components/ui/Reveal";
+
+const projects = [
+  {
+    icon: "📷",
+    iconWrap: "bg-[rgba(94,172,255,0.1)]",
+    title: "CAMS · EYE 360 AI-Vision",
+    desc: "Enterprise-grade Camera & Alert Management System with real-time AI analytics, live RTSP video streaming, Kafka-based sensor alerts, and a WebSocket-powered SOC operations dashboard.",
+    highlights: [
+      "Keycloak user sync + RBAC with 30+ permissions and team management",
+      "ROI configuration module — draw & edit analytics zones on live camera feeds",
+      "Kafka → WebSocket pipeline for real-time alert updates to SOC dashboard",
+      "QC testing module for live RTSP streaming & playback validation",
+      "Mobile backend APIs with GPS attendance, geocoding & cron auto-logout",
+    ],
+    tech: [
+      "NestJS",
+      "React",
+      "TypeScript",
+      "Kafka",
+      "WebSockets",
+      "RTSP",
+      "FFmpeg",
+      "Docker",
+      "PostgreSQL",
+      "Keycloak",
+      "Tailwind",
+    ],
+  },
+  {
+    icon: "👥",
+    iconWrap: "bg-[rgba(94,240,176,0.1)]",
+    title: "Resource Management Portal",
+    desc: "Full-stack recruitment workflow system managing the complete lifecycle — from lead intake and requirement creation to candidate interviewing and placement, with analytics and email automation.",
+    highlights: [
+      "JWT auth with access/refresh tokens and rights-based authorization (30+ permissions)",
+      "Modules: lead management, requirement creation with JD uploads, candidate pipeline",
+      "Candidate segmentation — Bench, Placed, Released resource tracking",
+      "Relational schema — foreign keys linking leads, requirements, resources, roles, users",
+      "Dashboard analytics APIs + automated email notifications for workflow events",
+    ],
+    tech: [
+      "NestJS",
+      "React",
+      "Redux Toolkit",
+      "TypeScript",
+      "PostgreSQL",
+      "TypeORM",
+      "JWT",
+      "Tailwind",
+    ],
+  },
+];
+
+export function Projects() {
+  return (
+    <section id="projects" className="bg-bg2 px-[6%] py-[90px]">
+      <Reveal>
+        <p className="mb-2 font-mono text-xs tracking-[0.12em] text-accent">
+          {"// FEATURED PROJECTS"}
+        </p>
+      </Reveal>
+      <Reveal delay={0.05}>
+        <h2 className="mb-14 font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-text">
+          Work I&apos;ve <em className="not-italic text-accent">Shipped</em>
+        </h2>
+      </Reveal>
+
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-5">
+        {projects.map((p, i) => (
+          <Reveal key={p.title} delay={0.08 * i}>
+            <article
+              data-cursor-hover
+              className="group relative flex flex-col overflow-hidden rounded-[var(--r2)] border border-border bg-bg3 p-7 transition-all duration-300 before:pointer-events-none before:absolute before:top-0 before:left-[-100%] before:h-full before:w-[60%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(94,172,255,0.03)] before:to-transparent before:transition-[left] before:duration-500 hover:before:left-[150%] hover:-translate-y-1 hover:border-bora hover:shadow-[var(--glow)]"
+            >
+              <div className="mb-4 flex items-start justify-between">
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl text-[22px] ${p.iconWrap}`}
+                >
+                  {p.icon}
+                </div>
+                <div className="flex gap-2">
+                  <span
+                    className="flex h-8 w-8 cursor-default items-center justify-center rounded-lg border border-border bg-surface text-[13px] text-muted transition-colors hover:border-bora hover:bg-surf2 hover:text-accent"
+                    title="GitHub"
+                  >
+                    ⌘
+                  </span>
+                  <span
+                    className="flex h-8 w-8 cursor-default items-center justify-center rounded-lg border border-border bg-surface text-[13px] text-muted transition-colors hover:border-bora hover:bg-surf2 hover:text-accent"
+                    title="Live Demo"
+                  >
+                    ↗
+                  </span>
+                </div>
+              </div>
+              <h3 className="mb-2.5 font-display text-[19px] font-bold text-text">
+                {p.title}
+              </h3>
+              <p className="mb-5 flex-1 text-[13px] leading-relaxed text-muted">
+                {p.desc}
+              </p>
+              <div className="mb-5 flex flex-col gap-1.5">
+                {p.highlights.map((h) => (
+                  <div key={h} className="flex gap-2 text-xs text-muted">
+                    <span className="mt-1 flex-shrink-0 text-[8px] text-accent">
+                      ✦
+                    </span>
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {p.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-[5px] border border-[rgba(94,172,255,0.15)] bg-[rgba(94,172,255,0.06)] px-2 py-0.5 font-mono text-[10px] text-accent"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
