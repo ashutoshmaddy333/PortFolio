@@ -102,7 +102,7 @@ const freelanceProjects = [
     ],
     type: "Freelance Public Project",
     githubUrl: "https://github.com/ashutoshmaddy333/Greeno.git",
-    liveUrl: "https://greeno-3p88.vercel.app",
+    liveUrl: "https://greeno.vercel.app/",
   },
   {
     icon: "🍛",
