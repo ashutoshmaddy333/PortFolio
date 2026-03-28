@@ -140,7 +140,7 @@ export function SiteFooter() {
           <p>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-surface/70 px-2.5 py-1 font-mono text-[10px] tracking-[0.1em] text-dim">
               <span className="h-1.5 w-1.5 rounded-full bg-a2" />
-              <span className="footer-status-text">REMOTE · CONTRACT · PART-TIME</span>
+              <span className="footer-status-text">FULL-TIME + FREELANCE</span>
             </span>
           </p>
         </div>

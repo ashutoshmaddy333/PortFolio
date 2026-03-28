@@ -56,7 +56,7 @@ export function Hero() {
           className="availability-chip mb-7 inline-flex items-center gap-2 rounded-full border border-a2/25 bg-a2/10 px-4 py-1.5 font-mono text-[11px] tracking-[0.08em] text-a2 shadow-[0_8px_25px_rgba(52,211,153,0.08)]"
         >
           <span className="h-1.5 w-1.5 animate-livepulse rounded-full bg-a2 shadow-[0_0_0_0_rgba(52,211,153,0.45)]" />
-          <span className="availability-text">Available for Remote / Contract Work</span>
+          <span className="availability-text">Full-time + freelance</span>
         </motion.div>
 
         <motion.h1
@@ -109,10 +109,12 @@ export function Hero() {
           <strong className="font-medium text-text">
             scalable, production-ready applications
           </strong>{" "}
-          — from real-time streaming pipelines to enterprise dashboards. 2+
-          years total experience (1 year freelancing + 1 year industry)
-          shipping robust APIs, microservices, and React frontends for global
-          clients.
+          — from real-time streaming pipelines to enterprise dashboards.{" "}
+          <strong className="font-medium text-text">8 months</strong> at my
+          current company (industry), and{" "}
+          <strong className="font-medium text-text">1 year</strong> in
+          freelancing projects — shipping robust APIs, microservices, and React
+          frontends for global clients.
         </motion.p>
 
         <motion.div
@@ -212,16 +214,26 @@ export function Hero() {
               Experience Snapshot
             </p>
             <p className="mt-1 text-[12px] leading-relaxed text-muted">
-              1 year industry + 1 year freelancing focused on backend systems,
-              realtime workflows, and production-grade dashboards.
+              <span className="block">
+                <span className="font-medium text-a2">8 mo</span> — current
+                company (industry)
+              </span>
+              <span className="mt-1 block">
+                <span className="font-medium text-accent">1 yr</span> —
+                freelancing projects
+              </span>
+              <span className="mt-2 block text-[11px]">
+                Focus: backend systems, realtime workflows, production-grade
+                dashboards.
+              </span>
             </p>
           </div>
           <div className="mb-5 grid grid-cols-2 gap-3">
             {[
-              ["2+", "Years Total"],
+              ["8 mo", "Current company"],
+              ["1 yr", "Freelancing"],
               ["15+", "APIs Built"],
               ["30+", "Permissions"],
-              ["2", "Enterprise Apps"],
             ].map(([n, l]) => (
               <div
                 key={l}

@@ -20,9 +20,11 @@ export function About() {
             <strong className="font-medium text-text">
               Software Engineer — Full Stack
             </strong>{" "}
-            based in Mumbai with 2+ years total experience (1 year
-            freelancing + 1 year industry) building production-grade
-            applications.
+            based in Mumbai with{" "}
+            <strong className="font-medium text-text">8 months</strong> at my
+            current company and{" "}
+            <strong className="font-medium text-text">1 year</strong> in
+            freelancing projects — building production-grade applications.
             My journey started with freelance projects in 2022, and I&apos;ve
             since grown into building enterprise-level systems with real-world
             complexity.
@@ -40,9 +42,9 @@ export function About() {
             I bring the same level of care to every layer.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
-            I&apos;m open to{" "}
+            Alongside my full-time role, I&apos;m open to{" "}
             <strong className="font-medium text-text">
-              remote contract work, hourly freelance, and part-time engagements
+              selective freelance work
             </strong>{" "}
             with US, UK, and international clients. I&apos;m async-friendly,
             responsive, and deliver on time.
@@ -52,10 +54,10 @@ export function About() {
         <Reveal variant="right">
           <div className="grid grid-cols-2 gap-4">
             {[
-              { n: "2+", l: "Years Total Experience", c: "text-accent" },
-              { n: "15+", l: "APIs Built", c: "text-a2" },
-              { n: "30+", l: "Permissions Designed", c: "text-a3" },
-              { n: "100%", l: "Remote Ready", c: "text-a4" },
+              { n: "8 mo", l: "Current company (industry)", c: "text-accent" },
+              { n: "1 yr", l: "Freelancing projects", c: "text-a2" },
+              { n: "15+", l: "APIs Built", c: "text-a3" },
+              { n: "30+", l: "Permissions Designed", c: "text-a4" },
             ].map((box) => (
               <div
                 key={box.l}

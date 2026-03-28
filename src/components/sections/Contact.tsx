@@ -9,7 +9,7 @@ const rows = [
   { ico: "✉", lbl: "EMAIL", val: "ashutoshkumarm416@gmail.com" },
   { ico: "📞", lbl: "PHONE / WHATSAPP", val: "+91 8738878776" },
   { ico: "📍", lbl: "LOCATION", val: "Mumbai, India" },
-  { ico: "🕐", lbl: "AVAILABILITY", val: "Part-time remote" },
+  { ico: "🕐", lbl: "AVAILABILITY", val: "Full-time + freelance" },
 ];
 
 const projectGroups = [
@@ -81,9 +81,8 @@ export function Contact() {
       <div className="grid items-start gap-10 md:grid-cols-2">
         <Reveal variant="left">
           <p className="mb-8 text-[15px] leading-relaxed text-muted">
-            I&apos;m available for remote freelance contracts, hourly work, and
-            part-time engagements. Fast replies, clean deliverables, and
-            timezone-flexible communication.
+            I work full-time and take on freelance projects on the side. Fast
+            replies, clean deliverables, and timezone-flexible communication.
           </p>
           <div className="flex flex-col gap-3.5">
             {rows.map((r, i) => (

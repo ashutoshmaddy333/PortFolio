@@ -7,7 +7,7 @@ const jobs = [
     current: true,
     role: "Software Engineer — Full Stack",
     company: "Evolve Cortex",
-    chips: ["Mumbai · Onsite", "MERN", "1 Year Industry"],
+    chips: ["Mumbai · Onsite", "MERN", "8 Months Industry"],
     bullets: [
       <>
         Built <strong className="font-medium text-text">CAMS (Camera & Alert Management System)</strong> — a real-time enterprise security platform with live RTSP streaming, Kafka-driven sensor alert pipeline, and WebSocket SOC dashboard
@@ -110,7 +110,9 @@ export function Experience() {
             <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-a2">
               INDUSTRY EXPERIENCE
             </p>
-            <p className="text-sm text-text">1 year — Full-time in product company</p>
+            <p className="text-sm text-text">
+              8 months — Full-time in product company (current)
+            </p>
           </div>
           <div className="rounded-xl border border-accent/25 bg-accent/8 p-4">
             <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-accent">
