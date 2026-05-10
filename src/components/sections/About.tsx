@@ -21,7 +21,7 @@ export function About() {
               Software Engineer — Full Stack
             </strong>{" "}
             based in Mumbai with{" "}
-            <strong className="font-medium text-text">8 months</strong> at my
+            <strong className="font-medium text-text">10 months</strong> at my
             current company and{" "}
             <strong className="font-medium text-text">1 year</strong> in
             freelancing projects — building production-grade applications.
@@ -30,7 +30,7 @@ export function About() {
             complexity.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
-            Currently at <strong className="font-medium text-text">Evolve Cortex</strong>, I work on CAMS — a camera management platform with AI analytics, real-time Kafka pipelines, and RTSP video streaming. I also built RMG, a complete recruitment workflow system with complex RBAC.
+            Currently at <strong className="font-medium text-text">Evolve Cortex</strong>, I work on CAMS — a camera and alert management platform with AI analytics, real-time Kafka pipelines, and RTSP video streaming. I also built RMG, a recruitment workflow system with robust RBAC.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
             I care deeply about{" "}
@@ -54,7 +54,7 @@ export function About() {
         <Reveal variant="right">
           <div className="grid grid-cols-2 gap-4">
             {[
-              { n: "8 mo", l: "Current company (industry)", c: "text-accent" },
+              { n: "10 mo", l: "Current company (industry)", c: "text-accent" },
               { n: "1 yr", l: "Freelancing projects", c: "text-a2" },
               { n: "15+", l: "APIs Built", c: "text-a3" },
               { n: "30+", l: "Permissions Designed", c: "text-a4" },

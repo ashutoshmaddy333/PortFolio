@@ -8,17 +8,20 @@ const internalProjects = [
   {
     icon: "📷",
     iconWrap: "bg-accent/10",
-    title: "CAMS · EYE 360 AI-Vision",
+    title: "CAMS - EYE 360 (AI-Vision)",
     date: "2025–Present",
-    desc: "Enterprise-grade Camera & Alert Management System with real-time AI analytics, live RTSP video streaming, Kafka-based sensor alerts, and a WebSocket-powered SOC operations dashboard.",
+    desc: "Enterprise-grade Camera & Alert Management System with secure API Gateway architecture, Keycloak SSO, real-time Kafka alerts, WebSocket SOC dashboard, and RTSP-based live operations.",
     summary:
-      "Internal SOC platform focused on real-time monitoring, AI analytics, and high-throughput alert delivery.",
+      "Built for SOC monitoring with multi-layer security, microservices isolation, and real-time camera analytics workflows.",
     highlights: [
+      "Single-entry API Gateway security pipeline: License Guard → RS256 JWT (JWKS) → CSRF Guard → Proxy",
+      "Keycloak SSO with OAuth2/OIDC for web (Authorization Code) and mobile (Direct Password Grant)",
+      "Refresh token rotation with replay attack prevention and M2M auth via Client Credentials Grant",
       "Keycloak user sync + RBAC with 30+ permissions and team management",
       "ROI configuration module — draw & edit analytics zones on live camera feeds",
       "Kafka → WebSocket pipeline for real-time alert updates to SOC dashboard",
       "QC testing module for live RTSP streaming & playback validation",
-      "Mobile backend APIs with GPS attendance, geocoding & cron auto-logout",
+      "Mobile APIs for attendance: GPS tracking, reverse geocoding, Base64 image capture, cron auto punch-out",
     ],
     tech: [
       "NestJS",
@@ -31,6 +34,7 @@ const internalProjects = [
       "Docker",
       "PostgreSQL",
       "Keycloak",
+      "OAuth2/OIDC",
       "Tailwind",
     ],
     type: "Company Internal Project",
@@ -40,17 +44,17 @@ const internalProjects = [
   {
     icon: "👥",
     iconWrap: "bg-a2/10",
-    title: "Resource Management Portal",
+    title: "Resource-Management-Portal",
     date: "2025–Present",
     desc: "Full-stack recruitment workflow system managing the complete lifecycle — from lead intake and requirement creation to candidate interviewing and placement, with analytics and email automation.",
     summary:
-      "Internal hiring operations suite streamlining lead-to-placement with automated workflows and analytics.",
+      "Recruitment workflow suite covering lead, requirement, and resource lifecycle with RBAC, notifications, and analytics.",
     highlights: [
-      "JWT auth with access/refresh tokens and rights-based authorization (30+ permissions)",
-      "Modules: lead management, requirement creation with JD uploads, candidate pipeline",
+      "JWT auth with access/refresh tokens and role-based access control (RBAC)",
+      "Modules: lead management, requirement creation with JD uploads, candidate pipeline (profile → interview → placement)",
       "Candidate segmentation — Bench, Placed, Released resource tracking",
       "Relational schema — foreign keys linking leads, requirements, resources, roles, users",
-      "Dashboard analytics APIs + automated email notifications for workflow events",
+      "Dashboard analytics APIs, automated email notifications, and JD/resume file uploads",
     ],
     tech: [
       "NestJS",

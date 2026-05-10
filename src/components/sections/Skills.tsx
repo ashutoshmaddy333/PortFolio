@@ -7,7 +7,7 @@ const cards = [
     tone: "b",
     iconClass: "bg-accent/10",
     title: "Backend Engineering",
-    sub: "Core expertise · 8 mo industry + 1 yr freelance",
+    sub: "Core expertise · 10 mo industry + 1 yr freelance",
     tags: [
       { t: "NestJS", c: "b" },
       { t: "Node.js", c: "b" },
@@ -26,7 +26,7 @@ const cards = [
     tone: "g",
     iconClass: "bg-a2/10",
     title: "Frontend Development",
-    sub: "React ecosystem · 8 mo industry + 1 yr freelance",
+    sub: "React ecosystem · 10 mo industry + 1 yr freelance",
     tags: [
       { t: "React.js", c: "g" },
       { t: "TypeScript", c: "g" },
@@ -169,7 +169,7 @@ export function Skills() {
         </h2>
       </Reveal>
 
-      <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
+      <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {cards.map((card, i) => (
           <Reveal key={card.title} delay={0.05 * (i % 4)} className="h-full">
             <div

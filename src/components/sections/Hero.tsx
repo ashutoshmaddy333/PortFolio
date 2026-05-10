@@ -110,7 +110,7 @@ export function Hero() {
             scalable, production-ready applications
           </strong>{" "}
           — from real-time streaming pipelines to enterprise dashboards.{" "}
-          <strong className="font-medium text-text">8 months</strong> at my
+          <strong className="font-medium text-text">10 months</strong> at my
           current company (industry), and{" "}
           <strong className="font-medium text-text">1 year</strong> in
           freelancing projects — shipping robust APIs, microservices, and React
@@ -215,7 +215,7 @@ export function Hero() {
             </p>
             <p className="mt-1 text-[12px] leading-relaxed text-muted">
               <span className="block">
-                <span className="font-medium text-a2">8 mo</span> — current
+                <span className="font-medium text-a2">10 mo</span> — current
                 company (industry)
               </span>
               <span className="mt-1 block">
@@ -230,7 +230,7 @@ export function Hero() {
           </div>
           <div className="mb-5 grid grid-cols-2 gap-3">
             {[
-              ["8 mo", "Current company"],
+              ["10 mo", "Current company"],
               ["1 yr", "Freelancing"],
               ["15+", "APIs Built"],
               ["30+", "Permissions"],

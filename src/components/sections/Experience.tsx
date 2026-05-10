@@ -3,11 +3,11 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const jobs = [
   {
-    date: "July 2025 → Present",
+    date: "July 1, 2025 → Present",
     current: true,
-    role: "Software Engineer — Full Stack",
+    role: "Software Engineer Trainee — Full Stack Developer",
     company: "Evolve Cortex",
-    chips: ["Mumbai · Onsite", "MERN", "8 Months Industry"],
+    chips: ["Mumbai · Onsite", "10 Months Industry"],
     bullets: [
       <>
         Built <strong className="font-medium text-text">CAMS (Camera & Alert Management System)</strong> — a real-time enterprise security platform with live RTSP streaming, Kafka-driven sensor alert pipeline, and WebSocket SOC dashboard
@@ -19,7 +19,7 @@ const jobs = [
         Developed <strong className="font-medium text-text">QC Testing module</strong> supporting live RTSP streaming and video playback to validate camera configurations
       </>,
       <>
-        Architected complete <strong className="font-medium text-text">Keycloak RBAC system</strong> — User CRUD, Role CRUD, 30+ rights/permissions, team management, and protected frontend routes
+        Designed <strong className="font-medium text-text">API Gateway multi-layer security</strong> (License Guard → RS256 JWT → CSRF) and integrated Keycloak SSO for secure web and mobile authentication
       </>,
       <>
         Built <strong className="font-medium text-text">RMG (Resource Management)</strong> — lead, requirement, and candidate lifecycle management with JWT auth, RBAC, and recruitment workflow (profile → interview → placement)
@@ -111,7 +111,7 @@ export function Experience() {
               INDUSTRY EXPERIENCE
             </p>
             <p className="text-sm text-text">
-              8 months — Full-time in product company (current)
+              10 months — Full-time in product company (current)
             </p>
           </div>
           <div className="rounded-xl border border-accent/25 bg-accent/8 p-4">

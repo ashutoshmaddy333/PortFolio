@@ -94,12 +94,12 @@ export function Services() {
         </h2>
       </Reveal>
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-4">
+      <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {services.map((s, i) => (
-          <Reveal key={s.num} delay={0.06 * (i % 4)}>
+          <Reveal key={s.num} delay={0.06 * (i % 4)} className="h-full">
             <div
               data-cursor-hover
-              className="rounded-[var(--r)] border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-bora hover:shadow-[var(--glow)]"
+              className="flex h-full flex-col rounded-[var(--r)] border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-bora hover:shadow-[var(--glow)]"
             >
               <div className="mb-4 font-mono text-[11px] tracking-[0.06em] text-dim">
                 {s.num}
@@ -111,7 +111,7 @@ export function Services() {
               <p className="mb-4 text-[13px] leading-relaxed text-muted">
                 {s.desc}
               </p>
-              <ul className="flex flex-col gap-1.5">
+              <ul className="mt-auto flex flex-col gap-1.5">
                 {s.items.map((item) => (
                   <li
                     key={item}
