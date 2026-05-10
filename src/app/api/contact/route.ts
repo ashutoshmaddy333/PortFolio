@@ -171,7 +171,7 @@ async function sendContactEmails(payload: Required<ContactPayload>) {
     },
   });
 
-  await Promise.allSettled([
+  await Promise.all([
     transporter.sendMail({
       from: smtp.from,
       to: smtp.ownerTo,
@@ -237,12 +237,10 @@ export async function POST(req: Request) {
 
     await connectToDatabase();
     await ContactSubmission.create(payload);
-    void sendContactEmails(payload).catch((mailError) => {
-      console.error("Async contact email error:", mailError);
-    });
+    await sendContactEmails(payload);
 
     return NextResponse.json(
-      { message: "Message received successfully." },
+      { message: "Message sent successfully." },
       { status: 201 },
     );
   } catch (error) {
