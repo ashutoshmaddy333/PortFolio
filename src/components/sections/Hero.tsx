@@ -1,5 +1,12 @@
 "use client";
 
+import {
+  DownloadIcon,
+  FileTextIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  VercelIcon,
+} from "@/components/icons/BrandIcons";
 import { ParticleCanvas } from "@/components/ParticleCanvas";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
@@ -110,7 +117,7 @@ export function Hero() {
             scalable, production-ready applications
           </strong>{" "}
           — from real-time streaming pipelines to enterprise dashboards.{" "}
-          <strong className="font-medium text-text">10 months</strong> at my
+          <strong className="font-medium text-text">1 year</strong> at my
           current company (industry), and{" "}
           <strong className="font-medium text-text">1 year</strong> in
           freelancing projects — shipping robust APIs, microservices, and React
@@ -215,7 +222,7 @@ export function Hero() {
             </p>
             <p className="mt-1 text-[12px] leading-relaxed text-muted">
               <span className="block">
-                <span className="font-medium text-a2">10 mo</span> — current
+                <span className="font-medium text-a2">1 yr</span> — current
                 company (industry)
               </span>
               <span className="mt-1 block">
@@ -230,7 +237,7 @@ export function Hero() {
           </div>
           <div className="mb-5 grid grid-cols-2 gap-3">
             {[
-              ["10 mo", "Current company"],
+              ["1 yr", "Current company"],
               ["1 yr", "Freelancing"],
               ["15+", "APIs Built"],
               ["30+", "Permissions"],
@@ -258,7 +265,7 @@ export function Hero() {
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-bg3 px-2 py-2 font-mono text-[10px] tracking-[0.06em] text-muted no-underline transition hover:-translate-y-0.5 hover:border-bora hover:text-accent"
               >
-                <span aria-hidden>🐙</span>
+                <GitHubIcon className="h-3.5 w-3.5 shrink-0" />
                 GitHub
               </a>
               <a
@@ -268,7 +275,7 @@ export function Hero() {
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-bg3 px-2 py-2 font-mono text-[10px] tracking-[0.06em] text-muted no-underline transition hover:-translate-y-0.5 hover:border-bora hover:text-accent"
               >
-                <span aria-hidden>▲</span>
+                <VercelIcon className="h-3.5 w-3.5 shrink-0" />
                 Vercel
               </a>
               <a
@@ -278,7 +285,7 @@ export function Hero() {
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-bg3 px-2 py-2 font-mono text-[10px] tracking-[0.06em] text-muted no-underline transition hover:-translate-y-0.5 hover:border-bora hover:text-accent"
               >
-                <span aria-hidden>in</span>
+                <LinkedInIcon className="h-3.5 w-3.5 shrink-0" />
                 LinkedIn
               </a>
             </div>
@@ -290,7 +297,7 @@ export function Hero() {
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-bg3 px-2 py-2 font-mono text-[10px] tracking-[0.06em] text-text no-underline transition hover:-translate-y-0.5 hover:border-bora hover:text-accent"
               >
-                <span aria-hidden>👀</span>
+                <FileTextIcon className="h-3.5 w-3.5 shrink-0" />
                 View Resume
               </a>
               <a
@@ -299,7 +306,7 @@ export function Hero() {
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent px-2 py-2 font-mono text-[10px] tracking-[0.06em] text-white no-underline transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_8px_20px_rgba(96,165,250,0.28)]"
               >
-                <span aria-hidden>⬇</span>
+                <DownloadIcon className="h-3.5 w-3.5 shrink-0" />
                 Download
               </a>
             </div>

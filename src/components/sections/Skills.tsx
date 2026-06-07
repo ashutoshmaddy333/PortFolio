@@ -7,7 +7,7 @@ const cards = [
     tone: "b",
     iconClass: "bg-accent/10",
     title: "Backend Engineering",
-    sub: "Core expertise · 10 mo industry + 1 yr freelance",
+    sub: "Core expertise · 1 yr industry + 1 yr freelance",
     tags: [
       { t: "NestJS", c: "b" },
       { t: "Node.js", c: "b" },
@@ -26,7 +26,7 @@ const cards = [
     tone: "g",
     iconClass: "bg-a2/10",
     title: "Frontend Development",
-    sub: "React ecosystem · 10 mo industry + 1 yr freelance",
+    sub: "React ecosystem · 1 yr industry + 1 yr freelance",
     tags: [
       { t: "React.js", c: "g" },
       { t: "TypeScript", c: "g" },

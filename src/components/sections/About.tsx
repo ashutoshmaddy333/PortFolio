@@ -21,7 +21,7 @@ export function About() {
               Software Engineer — Full Stack
             </strong>{" "}
             based in Mumbai with{" "}
-            <strong className="font-medium text-text">10 months</strong> at my
+            <strong className="font-medium text-text">1 year</strong> at my
             current company and{" "}
             <strong className="font-medium text-text">1 year</strong> in
             freelancing projects — building production-grade applications.
@@ -54,7 +54,7 @@ export function About() {
         <Reveal variant="right">
           <div className="grid grid-cols-2 gap-4">
             {[
-              { n: "10 mo", l: "Current company (industry)", c: "text-accent" },
+              { n: "1 yr", l: "Current company (industry)", c: "text-accent" },
               { n: "1 yr", l: "Freelancing projects", c: "text-a2" },
               { n: "15+", l: "APIs Built", c: "text-a3" },
               { n: "30+", l: "Permissions Designed", c: "text-a4" },

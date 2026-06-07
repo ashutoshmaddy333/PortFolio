@@ -1,4 +1,16 @@
+import {
+  ArrowUpRightIcon,
+  DownloadIcon,
+  FileTextIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  MapPinIcon,
+  PhoneIcon,
+  VercelIcon,
+} from "@/components/icons/BrandIcons";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 const links = [
   { href: "#skills", label: "Skills" },
@@ -6,6 +18,58 @@ const links = [
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
+
+const iconClass = "h-4 w-4 shrink-0";
+
+function FooterRow({
+  icon,
+  children,
+  className = "",
+}: {
+  icon: ReactNode;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`flex min-h-7 items-start gap-3 text-sm leading-snug text-muted ${className}`}
+    >
+      <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center">
+        {icon}
+      </span>
+      <span className="min-w-0 flex-1 break-words">{children}</span>
+    </span>
+  );
+}
+
+function FooterLink({
+  href,
+  icon,
+  children,
+  download,
+  external,
+}: {
+  href: string;
+  icon: ReactNode;
+  children: ReactNode;
+  download?: boolean;
+  external?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      download={download}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      className="group flex min-h-7 items-start gap-3 text-sm leading-snug text-muted no-underline transition-colors hover:text-accent"
+    >
+      <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center text-muted transition-colors group-hover:text-accent">
+        {icon}
+      </span>
+      <span className="min-w-0 flex-1 break-words">{children}</span>
+    </a>
+  );
+}
 
 export function SiteFooter() {
   return (
@@ -37,15 +101,17 @@ export function SiteFooter() {
                 QUICK LINKS
               </span>
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {links.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="inline-flex w-fit items-center gap-2 text-sm text-muted no-underline transition-colors hover:text-accent"
+                  className="group flex min-h-7 items-start gap-3 text-sm leading-snug text-muted no-underline transition-colors hover:text-accent"
                 >
-                  <span aria-hidden>↗</span>
-                  {l.label}
+                  <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center text-muted transition-colors group-hover:text-accent">
+                    <ArrowUpRightIcon className={iconClass} />
+                  </span>
+                  <span className="min-w-0 flex-1">{l.label}</span>
                 </Link>
               ))}
             </div>
@@ -58,22 +124,19 @@ export function SiteFooter() {
                 CONTACT
               </span>
             </p>
-            <div className="flex flex-col gap-2 text-sm text-muted">
-              <a
-                className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
+            <div className="flex flex-col gap-2.5">
+              <FooterLink
                 href="mailto:ashutoshkumarm416@gmail.com"
+                icon={<MailIcon className={iconClass} />}
               >
-                <span aria-hidden>✉</span>
                 ashutoshkumarm416@gmail.com
-              </a>
-              <span className="inline-flex items-center gap-2">
-                <span aria-hidden>📞</span>
+              </FooterLink>
+              <FooterRow icon={<PhoneIcon className={iconClass} />}>
                 +91 8738878776
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span aria-hidden>📍</span>
+              </FooterRow>
+              <FooterRow icon={<MapPinIcon className={iconClass} />}>
                 Mumbai, India
-              </span>
+              </FooterRow>
             </div>
           </div>
 
@@ -84,51 +147,42 @@ export function SiteFooter() {
                 PROFILES
               </span>
             </p>
-            <div className="flex flex-col gap-2 text-sm text-muted">
-              <a
+            <div className="flex flex-col gap-2.5">
+              <FooterLink
                 href="https://github.com/ashutoshmaddy333"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
+                external
+                icon={<GitHubIcon className={iconClass} />}
               >
-                <span aria-hidden>🐙</span>
                 GitHub
-              </a>
-              <a
+              </FooterLink>
+              <FooterLink
                 href="https://linkedin.com/in/ashutosh-kumar-545480282"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
+                external
+                icon={<LinkedInIcon className={iconClass} />}
               >
-                <span aria-hidden>in</span>
                 LinkedIn
-              </a>
-              <a
+              </FooterLink>
+              <FooterLink
                 href="https://vercel.com/ashutoshs-projects-b10a26cb"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
+                external
+                icon={<VercelIcon className={iconClass} />}
               >
-                <span aria-hidden>▲</span>
                 Vercel
-              </a>
-              <a
+              </FooterLink>
+              <FooterLink
                 href="/resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
+                external
+                icon={<FileTextIcon className={iconClass} />}
               >
-                <span aria-hidden>👀</span>
                 View Resume
-              </a>
-              <a
+              </FooterLink>
+              <FooterLink
                 href="/resume.pdf"
                 download
-                className="inline-flex w-fit items-center gap-2 no-underline transition-colors hover:text-accent"
+                icon={<DownloadIcon className={iconClass} />}
               >
-                <span aria-hidden>⬇</span>
                 Download Resume
-              </a>
+              </FooterLink>
             </div>
           </div>
         </div>

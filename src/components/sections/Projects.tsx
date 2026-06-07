@@ -1,5 +1,6 @@
 "use client";
 
+import { GitHubIcon } from "@/components/icons/BrandIcons";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { useState } from "react";
@@ -222,8 +223,9 @@ export function Projects() {
                       rel="noreferrer"
                       className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-[13px] text-muted transition-colors hover:border-bora hover:bg-surf2 hover:text-accent"
                       title="GitHub"
+                      aria-label="GitHub"
                     >
-                      ⌘
+                      <GitHubIcon className="h-4 w-4" />
                     </a>
                     <a
                       href={p.liveUrl}
