@@ -42,6 +42,7 @@ const socialLinks = {
   vercel: "https://vercel.com/ashutoshs-projects-b10a26cb",
   linkedin: "https://linkedin.com/in/ashutosh-kumar-545480282",
   resume: "/resume.pdf",
+  resumeDownloadName: "Ashutosh-Kumar-Resume.pdf",
 };
 
 export function Hero() {
@@ -305,7 +306,7 @@ export function Hero() {
               </a>
               <a
                 href={socialLinks.resume}
-                download
+                download={socialLinks.resumeDownloadName}
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent px-2 py-2 font-mono text-[10px] tracking-[0.06em] text-white no-underline transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_8px_20px_rgba(96,165,250,0.28)]"
               >

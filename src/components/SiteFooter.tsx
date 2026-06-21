@@ -52,7 +52,7 @@ function FooterLink({
   href: string;
   icon: ReactNode;
   children: ReactNode;
-  download?: boolean;
+  download?: boolean | string;
   external?: boolean;
 }) {
   return (
@@ -178,7 +178,7 @@ export function SiteFooter() {
               </FooterLink>
               <FooterLink
                 href="/resume.pdf"
-                download
+                download="Ashutosh-Kumar-Resume.pdf"
                 icon={<DownloadIcon className={iconClass} />}
               >
                 Download Resume
