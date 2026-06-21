@@ -54,6 +54,9 @@ const jobs = [
     chips: ["1 Year Freelancing"],
     bullets: [
       <>
+        Built <strong className="font-medium text-text">DropMart (2026–Present)</strong> — full-stack dropshipping marketplace with 4 role-based portals, Prisma RBAC, Razorpay payments, and Socket.IO live GPS tracking (Vercel + Render)
+      </>,
+      <>
         Delivered <strong className="font-medium text-text">GreenTech Jobs (2024–25)</strong> — a multi-role recruitment platform with admin-controlled system settings, maintenance mode, secure auth, and production-ready APIs
       </>,
       <>
@@ -70,12 +73,16 @@ const jobs = [
       "Worked asynchronously across time zones, meeting international deadlines consistently",
     ],
     tech: [
+      "Next.js",
+      "NestJS",
       "Node.js",
       "React.js",
-      "MongoDB",
       "PostgreSQL",
-      "JavaScript",
+      "Prisma",
+      "MongoDB",
+      "TypeScript",
       "REST APIs",
+      "WebSockets",
     ],
   },
   {

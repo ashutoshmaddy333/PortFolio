@@ -24,13 +24,13 @@ export function About() {
             <strong className="font-medium text-text">1 year</strong> at my
             current company and{" "}
             <strong className="font-medium text-text">1 year</strong> in
-            freelancing projects — building production-grade applications.
+            personal and freelance projects — building production-grade applications.
             My journey started with freelance projects in 2022, and I&apos;ve
             since grown into building enterprise-level systems with real-world
             complexity.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
-            Currently at <strong className="font-medium text-text">Evolve Cortex</strong>, I work on CAMS — a camera and alert management platform with AI analytics, real-time Kafka pipelines, and RTSP video streaming. I also built RMG, a recruitment workflow system with robust RBAC.
+            Outside work, I&apos;m currently building <strong className="font-medium text-text">DropMart (2026)</strong> — a full-stack dropshipping marketplace with multi-role portals, Razorpay payments, and live delivery tracking. At <strong className="font-medium text-text">Evolve Cortex</strong>, I work on CAMS — a camera and alert management platform with AI analytics, real-time Kafka pipelines, and RTSP video streaming. I also built RMG, a recruitment workflow system with robust RBAC.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
             I care deeply about{" "}

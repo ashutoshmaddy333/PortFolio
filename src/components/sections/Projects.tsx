@@ -75,6 +75,40 @@ const internalProjects = [
 
 const freelanceProjects = [
   {
+    icon: "🛒",
+    iconWrap: "bg-accent/10",
+    title: "DropMart — India's Smart Dropshipping Marketplace",
+    date: "2026–Present",
+    desc: "Full-stack dropshipping marketplace with multi-role portals (customer, supplier, admin, delivery), database-driven RBAC, Razorpay payments, and live GPS order tracking — Next.js on Vercel + NestJS API on Render.",
+    summary:
+      "Production-style e-commerce monorepo covering supplier onboarding, checkout, fulfillment, and real-time delivery tracking across four role-based experiences.",
+    highlights: [
+      "Four portals: storefront, supplier dashboard, admin console (RBAC), and mobile-first delivery rider app",
+      "JWT + refresh tokens, httpOnly cookies, CSRF protection, and database-driven roles/permissions",
+      "Razorpay checkout, order lifecycle, supplier verification, and product approval workflows",
+      "Socket.IO live GPS tracking with Google Maps — admin fleet map + customer live tracking",
+      "Prisma + PostgreSQL with master tables for statuses, payment methods, and RBAC (not hardcoded)",
+      "Cross-origin Vercel ↔ Render deployment with CORS, cookie handling, and responsive mobile nav",
+    ],
+    tech: [
+      "Next.js 14",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Socket.IO",
+      "Razorpay",
+      "Redux Toolkit",
+      "Tailwind",
+      "shadcn/ui",
+      "Google Maps",
+      "Monorepo",
+    ],
+    type: "Personal Public Project",
+    githubUrl: "https://github.com/ashutoshmaddy333/DropMart",
+    liveUrl: "https://drop-mart-api-elxn.vercel.app/",
+  },
+  {
     icon: "🌱",
     iconWrap: "bg-a2/10",
     title: "GreenTech Jobs — Job Seeker & Employer Platform",
@@ -151,7 +185,7 @@ export function Projects() {
   const [view, setView] = useState<"internal" | "freelance">("freelance");
   const activeProjects = view === "internal" ? internalProjects : freelanceProjects;
   const currentLabel =
-    view === "internal" ? "Company Internal Projects" : "Freelance Public Projects";
+    view === "internal" ? "Company Internal Projects" : "Personal & Freelance Projects";
 
   return (
     <section id="projects" className="bg-bg2 px-[6%] py-[90px]">
@@ -176,7 +210,7 @@ export function Projects() {
                 : "border-border bg-surface text-muted hover:border-bora hover:text-accent"
             }`}
           >
-            🌍 Freelance Public Projects
+            🌍 Personal & Freelance Projects
           </button>
           <button
             type="button"
