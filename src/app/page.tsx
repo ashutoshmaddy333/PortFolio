@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <Nav />
-      <main>
+      <main className="min-w-0 overflow-x-clip">
         <Hero />
         <Skills />
         <Experience />

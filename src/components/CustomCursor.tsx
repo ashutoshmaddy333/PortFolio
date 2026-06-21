@@ -1,8 +1,10 @@
 "use client";
 
+import { useTouchDevice } from "@/hooks/useTouchDevice";
 import { useEffect, useRef } from "react";
 
 export function CustomCursor() {
+  const touch = useTouchDevice();
   const curRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const mx = useRef(0);
@@ -12,6 +14,8 @@ export function CustomCursor() {
   const frame = useRef<number>(0);
 
   useEffect(() => {
+    if (touch) return;
+
     const prefersReduced =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -84,7 +88,9 @@ export function CustomCursor() {
         el.removeEventListener("mouseleave", onLeave);
       });
     };
-  }, []);
+  }, [touch]);
+
+  if (touch) return null;
 
   return (
     <>

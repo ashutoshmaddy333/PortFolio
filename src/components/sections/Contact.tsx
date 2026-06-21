@@ -2,6 +2,7 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { useTouchDevice } from "@/hooks/useTouchDevice";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
@@ -99,6 +100,7 @@ export function Contact() {
     text: string;
   } | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const touch = useTouchDevice();
   const projectGroups = inquiryType === "freelance" ? freelanceProjectGroups : recruiterProjectGroups;
   const budgetOptions =
     inquiryType === "freelance" ? freelanceBudgetOptions : recruiterBudgetOptions;
@@ -220,26 +222,48 @@ export function Contact() {
             replies, clean deliverables, and timezone-flexible communication.
           </p>
           <div className="flex flex-col gap-3.5">
-            {rows.map((r, i) => (
-              <motion.div
-                key={r.lbl}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: i * 0.06, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-3.5 rounded-[10px] border border-border bg-surface px-4 py-4 transition-colors hover:border-bora hover:bg-surf2"
-              >
-                <div className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-[10px] bg-accent/10 text-[17px]">
-                  {r.ico}
-                </div>
-                <div>
-                  <div className="mb-0.5 font-mono text-[11px] text-muted">
-                    {r.lbl}
+            {rows.map((r, i) => {
+              const rowClass =
+                "flex items-center gap-3.5 rounded-[10px] border border-border bg-surface px-4 py-4 transition-colors hover:border-bora hover:bg-surf2";
+              const rowContent = (
+                <>
+                  <div className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-[10px] bg-accent/10 text-[17px]">
+                    {r.ico}
                   </div>
-                  <div className="font-mono text-[13px] text-text">{r.val}</div>
-                </div>
-              </motion.div>
-            ))}
+                  <div>
+                    <div className="mb-0.5 font-mono text-[11px] text-muted">
+                      {r.lbl}
+                    </div>
+                    <div className="font-mono text-[13px] text-text">{r.val}</div>
+                  </div>
+                </>
+              );
+
+              if (touch) {
+                return (
+                  <div key={r.lbl} className={rowClass}>
+                    {rowContent}
+                  </div>
+                );
+              }
+
+              return (
+                <motion.div
+                  key={r.lbl}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    delay: i * 0.06,
+                    duration: 0.45,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className={rowClass}
+                >
+                  {rowContent}
+                </motion.div>
+              );
+            })}
           </div>
         </Reveal>
 

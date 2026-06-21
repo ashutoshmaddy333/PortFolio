@@ -201,7 +201,7 @@ export function Projects() {
           <Reveal key={p.title} delay={0.08 * i} className="h-full">
             <article
               data-cursor-hover
-              className={`group relative flex h-full min-h-[500px] flex-col overflow-hidden rounded-[var(--r2)] border border-border bg-bg3 p-7 transition-all duration-300 before:pointer-events-none before:absolute before:top-0 before:left-[-100%] before:h-full before:w-[60%] before:bg-gradient-to-r before:from-transparent before:to-transparent before:transition-[left] before:duration-500 hover:before:left-[150%] hover:-translate-y-1 hover:border-bora hover:shadow-[var(--glow)] md:min-h-[560px] ${
+              className={`group relative flex h-full min-h-[420px] flex-col overflow-hidden rounded-[var(--r2)] border border-border bg-bg3 p-7 transition-all duration-300 before:pointer-events-none before:absolute before:top-0 before:left-[-100%] before:h-full before:w-[60%] before:bg-gradient-to-r before:from-transparent before:to-transparent before:transition-[left] before:duration-500 hover:before:left-[150%] hover:-translate-y-1 hover:border-bora hover:shadow-[var(--glow)] md:min-h-[560px] ${
                 view === "internal" ? "before:via-accent/5" : "before:via-a2/8"
               }`}
             >

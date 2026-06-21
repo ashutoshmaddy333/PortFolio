@@ -67,6 +67,10 @@ html.light {
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -76,8 +80,17 @@ body {
     background 0.35s,
     color 0.35s;
   overflow-x: hidden;
+  max-width: 100%;
+  min-width: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (pointer: coarse) {
+  #cursor,
+  #cursor-ring {
+    display: none !important;
+  }
 }
 
 /* Custom utilities */

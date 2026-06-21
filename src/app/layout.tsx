@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -30,6 +30,16 @@ export const metadata: Metadata = {
     "Software engineer (full stack) building scalable NestJS, React, and TypeScript applications — APIs, real-time systems, and enterprise dashboards.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f6f9" },
+    { media: "(prefers-color-scheme: dark)", color: "#090b0f" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,7 +51,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${outfit.variable} ${jakarta.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full font-sans">
+      <body className="min-h-full min-w-0 overflow-x-hidden font-sans touch-manipulation">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

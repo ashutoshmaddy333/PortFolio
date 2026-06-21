@@ -1,5 +1,6 @@
 "use client";
 
+import { useTouchDevice } from "@/hooks/useTouchDevice";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -19,6 +20,7 @@ export function Reveal({
   variant = "up",
 }: RevealProps) {
   const reduce = useReducedMotion();
+  const touch = useTouchDevice();
 
   const offset =
     variant === "left"
@@ -27,7 +29,7 @@ export function Reveal({
         ? { x: 28, y: 0 }
         : { x: 0, y: 28 };
 
-  if (reduce) {
+  if (reduce || touch) {
     return <div className={className}>{children}</div>;
   }
 
@@ -36,7 +38,7 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once, amount: 0.12 }}
+      viewport={{ once, amount: 0.05, margin: "0px 0px -40px 0px" }}
       transition={{
         duration: 0.65,
         delay,

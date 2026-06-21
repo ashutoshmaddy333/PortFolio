@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/components/providers/ThemeProvider";
+import { useTouchDevice } from "@/hooks/useTouchDevice";
 import { useCallback, useEffect, useRef } from "react";
 
 type Pt = {
@@ -27,13 +28,21 @@ export function ParticleCanvas() {
   const { light } = useTheme();
   const lightRef = useRef(light);
   const mouseRef = useRef({ x: 0, y: 0 });
+  const touch = useTouchDevice();
+  const touchRef = useRef(touch);
 
   useEffect(() => {
     lightRef.current = light;
   }, [light]);
 
-  const initScene = useCallback((w: number, h: number) => {
-    const n = Math.floor((w * h) / 14000);
+  useEffect(() => {
+    touchRef.current = touch;
+  }, [touch]);
+
+  const initScene = useCallback((w: number, h: number, lite: boolean) => {
+    const density = lite ? 32000 : 14000;
+    const starDensity = lite ? 64000 : 28000;
+    const n = Math.min(Math.floor((w * h) / density), lite ? 40 : 120);
     const pts: Pt[] = [];
     for (let i = 0; i < n; i++) {
       pts.push({
@@ -48,7 +57,7 @@ export function ParticleCanvas() {
     ptsRef.current = pts;
 
     const stars: Star[] = [];
-    const starCount = Math.floor((w * h) / 28000);
+    const starCount = Math.min(Math.floor((w * h) / starDensity), lite ? 20 : 60);
     for (let i = 0; i < starCount; i++) {
       stars.push({
         x: Math.random() * w,
@@ -76,7 +85,7 @@ export function ParticleCanvas() {
       if (!parent) return;
       w = canvas.width = parent.offsetWidth;
       h = canvas.height = parent.offsetHeight;
-      initScene(w, h);
+      initScene(w, h, touchRef.current);
     };
 
     const draw = () => {
@@ -127,7 +136,8 @@ export function ParticleCanvas() {
       });
 
       for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
+        const maxLinks = touchRef.current ? 3 : pts.length;
+        for (let j = i + 1; j < Math.min(i + 1 + maxLinks, pts.length); j++) {
           const dx = pts[i].x - pts[j].x;
           const dy = pts[i].y - pts[j].y;
           const d = Math.sqrt(dx * dx + dy * dy);
@@ -165,7 +175,22 @@ export function ParticleCanvas() {
       window.removeEventListener("mousemove", onMove);
       ro.disconnect();
     };
-  }, [initScene]);
+  }, [initScene, touch]);
+
+  if (touch) {
+    return (
+      <div
+        className={`pointer-events-none absolute inset-0 ${
+          light ? "opacity-40" : "opacity-70"
+        }`}
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(96,165,250,0.14), transparent 70%)",
+        }}
+        aria-hidden
+      />
+    );
+  }
 
   return (
     <canvas

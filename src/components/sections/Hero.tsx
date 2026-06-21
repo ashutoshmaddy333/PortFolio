@@ -7,6 +7,7 @@ import {
   LinkedInIcon,
   VercelIcon,
 } from "@/components/icons/BrandIcons";
+import { useTouchDevice } from "@/hooks/useTouchDevice";
 import { ParticleCanvas } from "@/components/ParticleCanvas";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
@@ -45,6 +46,8 @@ const socialLinks = {
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const touch = useTouchDevice();
+  const motionOff = reduce || touch;
 
   return (
     <section
@@ -57,7 +60,7 @@ export function Hero() {
 
       <div className="relative z-[2]">
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 20 }}
+          initial={motionOff ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="availability-chip mb-7 inline-flex items-center gap-2 rounded-full border border-a2/25 bg-a2/10 px-4 py-1.5 font-mono text-[11px] tracking-[0.08em] text-a2 shadow-[0_8px_25px_rgba(52,211,153,0.08)]"
@@ -68,14 +71,14 @@ export function Hero() {
 
         <motion.h1
           className="font-display text-[clamp(3rem,6vw,5.2rem)] font-bold leading-[1.02] tracking-[-0.02em]"
-          initial={reduce ? false : { opacity: 0, y: 24 }}
+          initial={motionOff ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.span
             className="hero-name-solid inline-block"
-            initial={reduce ? undefined : { opacity: 0, y: 10 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            initial={motionOff ? undefined : { opacity: 0, y: 10 }}
+            animate={motionOff ? undefined : { opacity: 1, y: 0 }}
             transition={{ delay: 0.16, duration: 0.5 }}
           >
             Ashutosh
@@ -83,8 +86,8 @@ export function Hero() {
           <br />
           <motion.span
             className="hero-name-stroke inline-block"
-            initial={reduce ? undefined : { opacity: 0, y: 14 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            initial={motionOff ? undefined : { opacity: 0, y: 14 }}
+            animate={motionOff ? undefined : { opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.55 }}
           >
             Kumar
@@ -93,7 +96,7 @@ export function Hero() {
 
         <motion.p
           className="mt-4 mb-6 max-w-xl font-sans text-[15px] leading-relaxed text-muted"
-          initial={reduce ? false : { opacity: 0 }}
+          initial={motionOff ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
@@ -108,7 +111,7 @@ export function Hero() {
 
         <motion.p
           className="mb-9 max-w-[560px] text-base leading-relaxed text-muted"
-          initial={reduce ? false : { opacity: 0, y: 16 }}
+          initial={motionOff ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.55 }}
         >
@@ -126,14 +129,14 @@ export function Hero() {
 
         <motion.div
           className="mb-10 flex flex-wrap gap-2"
-          initial={reduce ? false : { opacity: 0 }}
+          initial={motionOff ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.5 }}
         >
           {chips.map((ch, i) => (
             <motion.span
               key={ch.t}
-              initial={reduce ? false : { opacity: 0, scale: 0.92 }}
+              initial={motionOff ? false : { opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
                 delay: 0.35 + i * 0.03,
@@ -150,7 +153,7 @@ export function Hero() {
 
         <motion.div
           className="flex flex-wrap gap-3.5 max-sm:grid max-sm:grid-cols-1"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
+          initial={motionOff ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
@@ -174,9 +177,9 @@ export function Hero() {
 
       <div className="relative z-[2] hidden md:block">
         <motion.div
-          initial={reduce ? false : { opacity: 0, x: 48 }}
+          initial={motionOff ? false : { opacity: 0, x: 48 }}
           animate={
-            reduce
+            motionOff
               ? { opacity: 1, x: 0 }
               : { opacity: 1, x: 0, y: [0, -6, 0] }
           }
@@ -192,7 +195,7 @@ export function Hero() {
             },
           }}
           whileHover={
-            reduce
+            motionOff
               ? undefined
               : {
                   y: -8,
@@ -205,7 +208,7 @@ export function Hero() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute -top-24 -right-20 h-56 w-56 rounded-full bg-accent/15 blur-3xl"
-            animate={reduce ? undefined : { opacity: [0.25, 0.45, 0.25], scale: [1, 1.08, 1] }}
+            animate={motionOff ? undefined : { opacity: [0.25, 0.45, 0.25], scale: [1, 1.08, 1] }}
             transition={{
               duration: 4.8,
               repeat: Number.POSITIVE_INFINITY,
