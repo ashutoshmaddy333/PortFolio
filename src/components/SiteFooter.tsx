@@ -85,11 +85,11 @@ export function SiteFooter() {
             </p>
             <div className="max-w-md rounded-xl border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] px-4 py-3 shadow-[0_12px_30px_rgba(2,8,23,0.22)]">
               <p className="mb-1.5 font-mono text-[11px] tracking-[0.08em] text-accent">
-                Software Engineer — Full Stack
+                Associate Software Engineer | Full-Stack Developer
               </p>
               <p className="text-sm leading-relaxed text-muted">
-                I build robust backend systems, modern frontend apps, and
-                real-time products for global clients.
+                Secure NestJS backends, React frontends, API Gateway security,
+                SSO, and real-time SOC products.
               </p>
             </div>
           </div>

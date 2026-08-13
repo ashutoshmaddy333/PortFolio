@@ -17,16 +17,16 @@ const chips = [
   { t: "Node.js", c: "b" },
   { t: "TypeScript", c: "b" },
   { t: "React.js", c: "g" },
-  { t: "Redux Toolkit", c: "g" },
   { t: "PostgreSQL", c: "o" },
-  { t: "TypeORM", c: "o" },
+  { t: "Redis", c: "o" },
   { t: "Kafka", c: "p" },
   { t: "WebSockets", c: "p" },
-  { t: "Docker", c: "" },
-  { t: "Microservices", c: "" },
-  { t: "REST APIs", c: "" },
-  { t: "RBAC", c: "" },
   { t: "Keycloak", c: "" },
+  { t: "DPoP / JWT", c: "" },
+  { t: "API Gateway", c: "" },
+  { t: "Kubernetes", c: "" },
+  { t: "Docker", c: "" },
+  { t: "RBAC", c: "" },
 ] as const;
 
 const chipClass: Record<string, string> = {
@@ -102,11 +102,11 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <span className="font-medium text-text">
-            Software Engineer — Full Stack
+            Associate Software Engineer | Full-Stack Developer
           </span>
           <span className="mx-2 text-dim">·</span>
           <span className="font-mono text-[13px] text-accent">
-            Node.js / React / TypeScript
+            NestJS / React / TypeScript
           </span>
         </motion.p>
 
@@ -116,16 +116,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.55 }}
         >
-          I build{" "}
+          Building{" "}
           <strong className="font-medium text-text">
-            scalable, production-ready applications
+            secure, scalable full-stack systems
           </strong>{" "}
-          — from real-time streaming pipelines to enterprise dashboards.{" "}
-          <strong className="font-medium text-text">1 year</strong> at my
-          current company (industry), and{" "}
-          <strong className="font-medium text-text">1 year</strong> in
-          freelancing projects — shipping robust APIs, microservices, and React
-          frontends for global clients.
+          — API Gateways, Keycloak SSO, JWT/DPoP auth, and real-time Kafka /
+          WebSocket pipelines.{" "}
+          <strong className="font-medium text-text">1+ year</strong> industry
+          experience at Evolve Cortex — Trainee (Jul 2025–Jun 2026), then
+          promoted to Associate on Jul 1, 2026 — plus{" "}
+          <strong className="font-medium text-text">1 year</strong> building
+          personal and freelance products.
         </motion.p>
 
         <motion.div
@@ -226,25 +227,24 @@ export function Hero() {
             </p>
             <p className="mt-1 text-[12px] leading-relaxed text-muted">
               <span className="block">
-                <span className="font-medium text-a2">1 yr</span> — current
-                company (industry)
+                <span className="font-medium text-a2">1+ yr</span> — Trainee →
+                Associate
               </span>
               <span className="mt-1 block">
                 <span className="font-medium text-accent">1 yr</span> —
-                freelancing projects
+                freelance / personal
               </span>
               <span className="mt-2 block text-[11px]">
-                Focus: backend systems, realtime workflows, production-grade
-                dashboards.
+                Focus: API Gateway security, SSO, realtime SOC, SaaS licensing.
               </span>
             </p>
           </div>
           <div className="mb-5 grid grid-cols-2 gap-3">
             {[
-              ["1 yr", "Current company"],
-              ["1 yr", "Freelancing"],
-              ["15+", "APIs Built"],
-              ["30+", "Permissions"],
+              ["1+ yr", "Industry"],
+              ["1 yr", "Freelance"],
+              ["6+", "Microservices"],
+              ["8.5/10", "Sec. audit"],
             ].map(([n, l]) => (
               <div
                 key={l}

@@ -9,10 +9,10 @@ const services = [
     desc: "Scalable, secure REST APIs built with NestJS and TypeScript. From simple CRUD to complex microservices architectures.",
     items: [
       "NestJS / Node.js REST APIs",
-      "JWT + Keycloak Authentication",
+      "API Gateway architecture",
+      "JWT + Keycloak + DPoP Auth",
       "RBAC & Permission Systems",
       "Microservices Architecture",
-      "Swagger API Documentation",
     ],
   },
   {
@@ -23,7 +23,7 @@ const services = [
     items: [
       "React + TypeScript + Redux",
       "Admin dashboards & portals",
-      "Recruitment / HR platforms",
+      "Multi-tenant SaaS platforms",
       "Real-time data dashboards",
       "Role-based UI access control",
     ],
@@ -71,13 +71,13 @@ const services = [
     num: "06",
     icon: "🔐",
     title: "Auth & Security Systems",
-    desc: "Enterprise-grade authentication and authorization systems, including SSO integration and fine-grained access control.",
+    desc: "Enterprise authentication with Keycloak SSO, DPoP-bound JWTs, BFF cookie flows, RBAC, and PKI software licensing.",
     items: [
-      "Keycloak SSO integration",
-      "JWT access/refresh token flow",
-      "Role-based access control",
-      "Rights/permissions management",
-      "Secure API middleware",
+      "Keycloak SSO + OAuth2/OIDC",
+      "JWT (RS256) + DPoP-bound tokens",
+      "RBAC & permission systems",
+      "Ed25519 PKI licensing",
+      "CSRF + BFF httpOnly cookies",
     ],
   },
 ];

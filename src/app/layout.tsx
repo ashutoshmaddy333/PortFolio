@@ -25,9 +25,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ashutosh Kumar | Software Engineer — Full Stack",
+  title: "Ashutosh Kumar | Associate Software Engineer — Full-Stack Developer",
   description:
-    "Software engineer (full stack) building scalable NestJS, React, and TypeScript applications — APIs, real-time systems, and enterprise dashboards.",
+    "Associate Software Engineer with 1+ year experience building secure NestJS, React, and TypeScript systems — API Gateways, Keycloak SSO, DPoP auth, Kafka/WebSockets, and Kubernetes.",
 };
 
 export const viewport: Viewport = {

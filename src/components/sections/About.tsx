@@ -16,21 +16,28 @@ export function About() {
       <div className="grid items-center gap-[60px] md:grid-cols-2">
         <Reveal variant="left" className="space-y-[18px]">
           <p className="text-[15px] leading-[1.85] text-muted">
-            I&apos;m a{" "}
+            I&apos;m an{" "}
             <strong className="font-medium text-text">
-              Software Engineer — Full Stack
+              Associate Software Engineer | Full-Stack Developer
             </strong>{" "}
             based in Mumbai with{" "}
-            <strong className="font-medium text-text">1 year</strong> at my
-            current company and{" "}
-            <strong className="font-medium text-text">1 year</strong> in
-            personal and freelance projects — building production-grade applications.
-            My journey started with freelance projects in 2022, and I&apos;ve
-            since grown into building enterprise-level systems with real-world
-            complexity.
+            <strong className="font-medium text-text">1+ year</strong> of
+            industry experience building secure, scalable apps with NestJS,
+            React, TypeScript, and PostgreSQL — plus{" "}
+            <strong className="font-medium text-text">1 year</strong> of personal
+            and freelance work. Started as Software Engineer Trainee (Jul 2025–
+            Jun 2026) and promoted to Associate Software Engineer on Jul 1,
+            2026.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
-            Outside work, I&apos;m currently building <strong className="font-medium text-text">DropMart (2026)</strong> — a full-stack dropshipping marketplace with multi-role portals, Razorpay payments, and live delivery tracking. At <strong className="font-medium text-text">Evolve Cortex</strong>, I work on CAMS — a camera and alert management platform with AI analytics, real-time Kafka pipelines, and RTSP video streaming. I also built RMG, a recruitment workflow system with robust RBAC.
+            At{" "}
+            <strong className="font-medium text-text">Evolve Cortex</strong>, I
+            work on CAMS-EYE360 — API Gateway security, Keycloak SSO, DPoP-bound
+            auth, PKI licensing, Kafka/WebSocket SOC pipelines, and dual
+            standalone + multi-tenant SaaS deployments across HEX, DFX, and
+            WebX. Outside work, I&apos;m building{" "}
+            <strong className="font-medium text-text">DropMart</strong> — a
+            dropshipping marketplace with live delivery tracking.
           </p>
           <p className="text-[15px] leading-[1.85] text-muted">
             I care deeply about{" "}
@@ -54,10 +61,10 @@ export function About() {
         <Reveal variant="right">
           <div className="grid grid-cols-2 gap-4">
             {[
-              { n: "1 yr", l: "Current company (industry)", c: "text-accent" },
-              { n: "1 yr", l: "Freelancing projects", c: "text-a2" },
-              { n: "15+", l: "APIs Built", c: "text-a3" },
-              { n: "30+", l: "Permissions Designed", c: "text-a4" },
+              { n: "1+ yr", l: "Industry experience", c: "text-accent" },
+              { n: "1 yr", l: "Freelance / personal", c: "text-a2" },
+              { n: "6+", l: "Microservices", c: "text-a3" },
+              { n: "8.5/10", l: "Security audit score", c: "text-a4" },
             ].map((box) => (
               <div
                 key={box.l}
